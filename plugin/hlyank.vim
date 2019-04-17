@@ -1,10 +1,10 @@
-let s:cpo_save = &cpo
-set cpo-=C
-
 if !exists("##TextYankPost") || !has('timers') || exists('g:loaded_hlyank_plugin')
   finish
 endif
 let g:loaded_hlyank_plugin = 1
+
+let s:cpo_save = &cpo
+set cpo-=C
 
 augroup HighlightYank
   autocmd!

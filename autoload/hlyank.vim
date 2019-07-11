@@ -20,17 +20,26 @@ function! s:highlight(pos, type, reg) abort
     return
   endif
   if a:type[0] == ''
-    let id = matchadd('Visual', printf('\v%%>%dl%%>%dc%%<%dl%%<%dc', pos[0] - 1, pos[1] - 1, pos[2] + 1, pos[3] + 1))
+    let id = matchadd('Visual', printf('\v%%>%dl%%>%dc%%<%dl%%<%dc',
+          \ pos[0] - 1, pos[1] - 1, pos[2] + 1, pos[3] + 1))
   elseif a:type ==# 'V'
-    let id = matchadd('Visual', printf('\v%%>%dl%%<%dl', pos[0] - 1, pos[2] + 1))
+    let id = matchadd('Visual', printf('\v%%>%dl%%<%dl',
+          \ pos[0] - 1, pos[2] + 1))
   else
     if pos[0] == pos[2]
-      let id = matchadd('Visual', printf('\v%%%dl%%%dc\_.{%d}', pos[0], pos[1], strchars(a:reg[0])))
+      let id = matchadd('Visual', printf('\v%%%dl%%%dc\_.{%d}',
+            \ pos[0], pos[1], strchars(a:reg[0])))
     else
-      let id = matchadd('Visual', printf('\v%%%dl%%%dc\_.{-}%%%dl%%%dc.=', pos[0], pos[1], pos[2], pos[3]))
+      let id = matchadd('Visual', printf('\v%%%dl%%%dc\_.{-}%%%dl%%%dc.=',
+            \ pos[0], pos[1], pos[2], pos[3]))
     endif
   endif
-  call timer_start(200, {-> matchdelete(id)})
+  if has('patch-8.1.0218')
+    let winid = win_getid()
+    call timer_start(200, {-> matchdelete(id, winid)})
+  else
+    call timer_start(200, {-> matchdelete(id)})
+  endif
 endfunction
 
 let &cpo = s:cpo_save

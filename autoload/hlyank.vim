@@ -2,7 +2,7 @@ let s:cpo_save = &cpo
 set cpo-=C
 
 function! hlyank#debounce_hl() abort
-  if v:event.operator isnot 'y' || v:event.regname is '*'
+  if v:event.operator isnot 'y'
     return
   endif
   if exists('s:timer_start_hl')

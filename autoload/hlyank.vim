@@ -20,8 +20,7 @@ function! s:highlight(pos, type, reg) abort
     return
   endif
   if a:type[0] == ''
-    let id = matchadd('Visual', printf('\v%%>%dl%%>%dc%%<%dl%%<%dc',
-          \ pos[0] - 1, pos[1] - 1, pos[2] + 1, pos[3] + 1))
+    let id = matchadd('Visual', '\v%\V')
   elseif a:type ==# 'V'
     let id = matchadd('Visual', printf('\v%%>%dl%%<%dl',
           \ pos[0] - 1, pos[2] + 1))

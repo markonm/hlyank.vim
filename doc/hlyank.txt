@@ -29,9 +29,6 @@ Currently there are no settings.
 ==============================================================================
 KNOWN ISSUES					*hlyank-issues*
 
- - Text yanked within |blockwise-visual| is not highlighted correctly if
-   it contains tabs or multibyte characters.
-
 ==============================================================================
 CHANGELOG					*hlyank-changelog*
 

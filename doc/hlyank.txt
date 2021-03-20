@@ -13,8 +13,8 @@ Changelog               |hlyank-changelog|
 ==============================================================================
 INTRODUCTION					*hlyank-introduction*
 
-This plugin will highlight yanked text. Yanked text is highlighted with
-Visual group for the duration of 200 ms.
+This plugin highlights yanked text. Yanked text is highlighted with Visual
+group for the duration of 200 ms.
 
 ==============================================================================
 REQUIREMENTS					*hlyank-requirements*

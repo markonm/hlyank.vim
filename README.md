@@ -14,8 +14,8 @@ Changelog               |hlyank-changelog|
 ==============================================================================
 INTRODUCTION					*hlyank-introduction*
 
-This plugin will highlight yanked text. Yanked text is highlighted with
-Visual group for the duration of 200 ms.
+This plugin highlights yanked text. Yanked text is highlighted with Visual
+group for the duration of 200 ms.
 
 ==============================================================================
 REQUIREMENTS					*hlyank-requirements*
@@ -29,9 +29,6 @@ Currently there are no settings.
 
 ==============================================================================
 KNOWN ISSUES					*hlyank-issues*
-
- - Text yanked within |blockwise-visual| is not highlighted correctly if
-   it contains tabs or multibyte characters.
 
 ==============================================================================
 CHANGELOG					*hlyank-changelog*
